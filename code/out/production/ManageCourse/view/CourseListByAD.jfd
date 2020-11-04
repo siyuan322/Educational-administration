@@ -1,0 +1,123 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {par t {par l {seq l {space :112::x, comp editCcreditTextField6:::p:242:p}, seq {par l {seq {space :p:230:p, comp cidTextField1:::p:169:p, space :p:28:p, comp label3:::p:72:p, space :p:29:p, comp cnameTextField2:::p:184:p, space u:::p, comp button1:::p:158:p}, seq l {space :p:112:p, par t {comp button2:::p:178:p, par t {seq l {comp label4:::p::p, space s:::p, comp editCidTextField3:::p:232:p}, seq t {comp label6:::p:64:p, space s:::p, comp editChourTextField5:::p:232:p}}}}, seq l {space :p:379:p, comp label1:::p:132:p}}, space :0:0:x}}, seq l {space :p:112:p, par t:::p {par l {comp label2:::p::p, comp scrollPane1:::p:770:p}, seq l {space :p:385:p, comp button3:::p:176:p}, seq l {space :p:409:p, par t {comp label7:::p:72:p, comp label5:::p:72:p}, space :::x, comp editCnameTextField4:::p:242:p}}}}, space :p:93:p}}"
+			"$verticalGroup": "par l {seq l {space :p:39:p, comp label1:::p:46:p, space s:::p, par b {comp cnameTextField2::b:p::p, comp label3::b:p:34:p, comp cidTextField1::b:p:33:p, comp label2::b:p:33:p, comp button1::b:p::p}, space :p:49:p, comp scrollPane1:::p:247:p, space :p:36:p, par b {comp label4::b:p:32:p, comp editCidTextField3::b:p:32:p, comp label5::b:p:32:p, comp editCnameTextField4::b:p::p}, space ::38:x, par b {comp editCcreditTextField6::b:p::p, comp editChourTextField5::b:p::p, comp label6::b:p:32:p, comp label7::b:p:32:p}, space :p:39:p, par b {comp button3::b:p::p, comp button2::b:p::p}, space ::35:x}}"
+		} ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "courseListTable"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "课程号" )
+						add( "课程名" )
+						add( "学时" )
+						add( "学分" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( false )
+						add( false )
+						add( false )
+						add( false )
+					}, new java.util.Vector {
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+					} )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "selectOneCourseMouseClicked", true ) )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "所 有 课 程"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 24 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "课程号："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "cidTextField1"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "课程名："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "cnameTextField2"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查询"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchCourseButton1ActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "课程号："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "editCidTextField3"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "课程名："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "editCnameTextField4"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "学时："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "editChourTextField5"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "学分："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "editCcreditTextField6"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "确 认 修 改"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "submitEditButton2ActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "删 除"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "deleteCourseButton3ActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 975, 675 )
+		} )
+	}
+}
