@@ -5,8 +5,10 @@
 package view;
 
 import dao.AcdemicDeanDao;
+import dao.StudentDao;
 import dao.TeacherDao;
 import model.AcdemicDean;
+import model.Student;
 import model.Teacher;
 import model.UserType;
 
@@ -89,9 +91,25 @@ public class LoginFrame extends JFrame {
             } else {
                 // 登录成功
                 this.dispose();
-                new TeacherMainFrm(UserType.ACDEMICDEAN, teacher).setVisible(true);
+                new TeacherMainFrm(UserType.TEACHER, teacher).setVisible(true);
                 JOptionPane.showMessageDialog(null, "登录成功！");
             }
+        } else if (userType == UserType.STUDENT) {
+            // 学生登录
+            // 查询是否存在该用户
+            Student student = new StudentDao().login(userId, password);
+            if (student == null) {
+                // 登录失败
+                JOptionPane.showMessageDialog(null, "用户名或密码失败！");
+                return;
+            } else {
+                // 登录成功
+                this.dispose();
+                new StudentMainFrame(UserType.STUDENT, student).setVisible(true);
+                JOptionPane.showMessageDialog(null, "登录成功！");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "请选择用户类型");
         }
     }
 
