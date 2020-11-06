@@ -1,0 +1,172 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :p:36:p, par l:::p {comp scrollPane1::l:p:887:p, seq l {comp label2:::p::p, space s:::p, comp cnameTextField1:::p:147:p, space s:::p, comp label3:::p::p, space s:::p, par l {seq {comp capacityComboBox1:::p:85:p, space :p:41:p, comp label4:::p::p}, comp label1:::p::p}, space :p:14:p, comp instituteComboBox2:::p:199:p, space :::x, comp button1:::p::p}, seq l {par l {comp label5::l:p::p, comp label8::l:p:96:p}, space :p:47:p, par l {seq {comp teachIDTextField2:::p:156:p, space :::x, comp chourTextField4:::p:101:p}, seq l {par l {seq {comp ccreditTextField5:::p:156:p, space :p:65:p, par l {comp label6::l:p::p, comp label9::l:p::p}}, seq l {space :p:81:p, comp button2:::p:139:p}}, space :p:28:p, par l {comp scrollPane2:::::x, seq {par l {seq {comp editInstituteTextField3:::p:213:p, space s:::p, comp label7:::p::p}, comp button3::l:p:124:p}, space :0:0:x}}}}}}, space :p:52:p}}"
+			"$verticalGroup": "par l {seq l {space :p:39:p, comp label1:::p::p, space s:::p, par b {comp label2::b:p::p, comp cnameTextField1::b:p::p, comp label3::b:::x, comp capacityComboBox1::b:p::p, comp label4::b:p:32:p, comp instituteComboBox2::b:p::p, comp button1::b:p::p}, space u:::p, comp scrollPane1:::p:245:p, space :p:58:p, par b {comp label7::b:p::p, comp label6::b:p::p, comp label5::b:p::p, comp editInstituteTextField3::b:p::p, comp chourTextField4::b:p::p, comp teachIDTextField2::b:p::p}, space :p:47:p, par b {comp label8::b:p::p, comp label9::b:p::p, comp scrollPane2::b:p:66:p, comp ccreditTextField5::b:p::p}, space :p:28:p, par b {comp button3::b:p::p, comp button2::b:p::p}, space :p:26:p}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "学  生  选  课"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 26 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "课程名："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "cnameTextField1"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "是否有余量："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "capacityComboBox1"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "请选择"
+					addElement( "请选择" )
+					addElement( "是" )
+					addElement( "否" )
+				}
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "学院："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "instituteComboBox2"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "请选择"
+					addElement( "请选择" )
+					addElement( "计算机科学与工程学院" )
+					addElement( "数学学院" )
+					addElement( "马克思主义学院" )
+				}
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查 询"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchButton1ActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "courseListTable"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "教学班编号" )
+						add( "课程名" )
+						add( "教师名" )
+						add( "容量" )
+						add( "现有人数" )
+						add( "上课时间" )
+						add( "开课学院" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( false )
+						add( false )
+						add( false )
+						add( false )
+						add( false )
+						add( false )
+						add( false )
+					}, new java.util.Vector {
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+						add( new com.jformdesigner.model.SwingTableColumn( null, 0, 0, 0, false ) )
+					} )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+					addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "selectCourseMouseClicked", true ) )
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "教学班编号："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "teachIDTextField2"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "开课学院："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "editInstituteTextField3"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "学时："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "chourTextField4"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "学分："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "ccreditTextField5"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "课程介绍："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "descriptionTextArea1"
+					"editable": false
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "选    课"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "chooseCourseActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "退    选"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelCourseActionPerformed", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 0 )
+			"size": new java.awt.Dimension( 975, 675 )
+		} )
+	}
+}
