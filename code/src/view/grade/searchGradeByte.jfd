@@ -1,0 +1,87 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:252:p, comp button1:::p::p}, seq l {space :p:70:p, par l {comp label2::l:p:77:p, comp label1::l:p::p}, space :::p, par l {comp textField1:::p:92:p, comp textField2::l:p:92:p}}, seq l {space :p:37:p, comp scrollPane1:::p:586:p}}, space ::132:x}}"
+			"$verticalGroup": "par l {seq l {space :p:97:p, par b {comp label1::b:p:27:p, comp textField1::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space :p:10:p, comp button1:::p::p, space :p:33:p, comp scrollPane1:::p:407:p, space ::25:x}}"
+		} ) {
+			name: "this"
+			"minimumSize": new java.awt.Dimension( 515, 660 )
+			"preferredSize": new java.awt.Dimension( 975, 675 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "教师编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "课程编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查询"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "seachGradeByteButton1ActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+					"focusable": false
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "学生学号" )
+						add( "教师编号" )
+						add( "班级编号" )
+						add( "课程编号" )
+						add( "课程名称" )
+						add( "平时成绩" )
+						add( "期末成绩" )
+						add( "最终成绩" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+					auxiliary() {
+						"model.forceValue": true
+					}
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 50, 60 )
+			"size": new java.awt.Dimension( 755, 665 )
+		} )
+	}
+}

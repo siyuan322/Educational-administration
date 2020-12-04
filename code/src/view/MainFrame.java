@@ -13,6 +13,8 @@ import view.book.ShowABook;
 import view.course.AddCourseByAD;
 import view.course.AuditByAD;
 import view.course.CourseListByAD;
+import view.grade.searchGradeByte;
+import view.grade.updateGrade;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,6 +60,14 @@ public class MainFrame extends JFrame {
         // 具体条目
         JPanel showABook = new ShowABook();
         panel1.add(showABook, "showABook");
+
+        // 成绩查询
+        JPanel searchGradeByte = new searchGradeByte();
+        panel1.add(searchGradeByte, "searchGradeByte");
+
+        // 成绩修改
+        JPanel updateGrade = new updateGrade();
+        panel1.add(updateGrade, "updateGrade");
 
         // 测试面板
         JPanel testPanel = new TestPanel();
@@ -119,6 +129,19 @@ public class MainFrame extends JFrame {
         cardLayout.show(panel1, "modifyBook");
     }
 
+    // 成绩查询
+    private void searchGradeActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "searchGradeByte");
+    }
+
+    // 成绩修改
+    private void updateGradeActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "updateGrade");
+    }
+
+    // 成绩查询
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
@@ -132,6 +155,9 @@ public class MainFrame extends JFrame {
         menuItem9 = new JMenuItem();
         menuItem7 = new JMenuItem();
         menuItem8 = new JMenuItem();
+        menu4 = new JMenu();
+        menuItem10 = new JMenuItem();
+        menuItem11 = new JMenuItem();
         menu2 = new JMenu();
         menuItem5 = new JMenuItem();
         panel1 = new JPanel();
@@ -205,6 +231,25 @@ public class MainFrame extends JFrame {
             }
             menuBar1.add(menu3);
 
+            //======== menu4 ========
+            {
+                menu4.setText("\u6210\u7ee9\u7ba1\u7406");
+                menu4.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+
+                //---- menuItem10 ----
+                menuItem10.setText("\u6210\u7ee9\u67e5\u8be2");
+                menuItem10.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem10.addActionListener(e -> searchGradeActionPerformed(e));
+                menu4.add(menuItem10);
+
+                //---- menuItem11 ----
+                menuItem11.setText("\u6210\u7ee9\u4fee\u6539");
+                menuItem11.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem11.addActionListener(e -> updateGradeActionPerformed(e));
+                menu4.add(menuItem11);
+            }
+            menuBar1.add(menu4);
+
             //======== menu2 ========
             {
                 menu2.setText("\u7cfb\u7edf\u7ba1\u7406");
@@ -238,6 +283,7 @@ public class MainFrame extends JFrame {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+
     }
 
     UserType userType;  // 用户的类型
@@ -255,6 +301,9 @@ public class MainFrame extends JFrame {
     private JMenuItem menuItem9;
     private JMenuItem menuItem7;
     private JMenuItem menuItem8;
+    private JMenu menu4;
+    private JMenuItem menuItem10;
+    private JMenuItem menuItem11;
     private JMenu menu2;
     private JMenuItem menuItem5;
     private JPanel panel1;

@@ -1,0 +1,111 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space ::310:x, comp button1:::p::p, space :p:486:p}, seq {par l {seq {space :58:58:p, par l {seq l {comp label6:::p:60:p, space u:::p, comp textField6:::p:140:p}, comp label5::l:p::p, par t:l {comp textField5::t:p:140:p, par l:::p {seq {comp label4:::p::p, space s:::p, comp textField4::::140:x}, seq {comp label3:::p::p, space s:::p, comp textField3::::140:x}, seq {par l:::p {comp label2:::::x, comp label1:::::x}, space s:::p, par l:::p {comp textField1::::140:x, comp textField2::::140:x}}}}}}, seq l {space :p:26:p, comp scrollPane1:::p:581:p}}, space ::263:x}}"
+			"$verticalGroup": "par l {seq l {space :p:44:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space s:::p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space u:::p, par b {comp label4::b:p::p, comp textField4::b:p::p}, space :::p, par t {comp label5:::p::p, comp textField5:::p::p}, space u:::p, par b {comp label6::b:p::p, comp textField6::b:p::p}, space :p:7:p, comp button1:::p::p, space s:::p, comp scrollPane1:::p:268:p, space ::155:x}}"
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 975, 675 )
+			"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "学生学号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "课程编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "教师编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "更改"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "平时成绩"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "期末成绩"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "最终成绩"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6"
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "学生学号" )
+						add( "课程编号" )
+						add( "教师编号" )
+						add( "平时成绩" )
+						add( "期末成绩" )
+						add( "最终成绩" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+					auxiliary() {
+						"model.forceValue": true
+					}
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 5 )
+			"size": new java.awt.Dimension( 870, 720 )
+		} )
+	}
+}

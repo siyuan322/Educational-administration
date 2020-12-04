@@ -38,6 +38,10 @@ public class StudentMainFrame extends JFrame {
         JPanel showABook = new ShowABook();
         panel1.add(showABook, "showABook");
 
+        // 成绩查询
+        JPanel chooseCourse = new ChooseCourse(student);
+        panel1.add(searchGrade, "searchGradeBystu")
+
         // 测试面板
         JPanel testPanel = new TestPanel();
         panel1.add(testPanel, "test");
@@ -74,6 +78,12 @@ public class StudentMainFrame extends JFrame {
         cardLayout.show(panel1, "showABook");
     }
 
+    // 成绩查询
+    private void gradeSearchActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "searchGradeBystu");
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -84,6 +94,8 @@ public class StudentMainFrame extends JFrame {
         menu3 = new JMenu();
         menuItem4 = new JMenuItem();
         menuItem5 = new JMenuItem();
+        menu4 = new JMenu();
+        menuItem6 = new JMenuItem();
         menu2 = new JMenu();
         menuItem3 = new JMenuItem();
         panel1 = new JPanel();
@@ -133,6 +145,19 @@ public class StudentMainFrame extends JFrame {
             }
             menuBar1.add(menu3);
 
+            //======== menu4 ========
+            {
+                menu4.setText("\u6210\u7ee9\u7ba1\u7406");
+                menu4.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+
+                //---- menuItem6 ----
+                menuItem6.setText("\u6210\u7ee9\u67e5\u8be2");
+                menuItem6.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem6.addActionListener(e -> gradeSearchActionPerformed(e));
+                menu4.add(menuItem6);
+            }
+            menuBar1.add(menu4);
+
             //======== menu2 ========
             {
                 menu2.setText("\u7cfb\u7edf\u7ba1\u7406");
@@ -178,6 +203,8 @@ public class StudentMainFrame extends JFrame {
     private JMenu menu3;
     private JMenuItem menuItem4;
     private JMenuItem menuItem5;
+    private JMenu menu4;
+    private JMenuItem menuItem6;
     private JMenu menu2;
     private JMenuItem menuItem3;
     private JPanel panel1;

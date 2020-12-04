@@ -1,0 +1,135 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :77:77:p, par l {seq {comp label6:::p:77:p, space u:::p, comp textField6:::p:128:p, space :p:106:p, comp button1:::p::p}, par l:::p {seq {comp label8:::p:65:p, space ::23:x, comp textField8:::p:129:p}, seq {par l {par l:l::p {comp label2::l::77:x, comp label3::t::77:x, comp label1::t::77:x, comp label4::l::77:x}, comp label7::l:p:59:p, comp label5::l:p:65:p}, par l {seq {space u:::p, par t {comp textField3:::p:128:p, par l:::p {seq {par l {comp textField2::l:p:126:p, comp textField4::l:p:126:p, comp textField1::l:p:126:p}, space ::2:x}, comp textField5::::128:x}}}, seq {space :p:10:p, comp textField7:::p:130:p}}}}}}, seq l {space :::p, comp scrollPane1:::p:878:p}}, space ::101:x}}"
+			"$verticalGroup": "par l {seq t {space :::p, par b {comp label1::b:p:26:p, comp textField1::b:p:28:p}, space :p::p, par b {comp label2::b:p:29:p, comp textField2::b:p:24:p}, space :p::p, par b {comp label3::b:p:31:p, comp textField4::b:p:26:p}, space u:p::p, par b {comp label4::b:p::p, comp textField5::b:p:26:p}, space :p::p, par b {comp label7::b:p:29:p, comp textField3::b:p::p}, par l {seq {space :p:13:p, par b {comp textField8::b:p:25:p, comp label8::b:p:25:p}, space u:::p, par b {comp textField7::b:p::p, comp label5::b:p:23:p}, space u:::p, par l {seq {comp label6:::p::p, space :0:0:x}, seq l {comp textField6:::p:24:p, space :::x}}}, seq l {space :p:88:p, comp button1:::p::p, space :p:49:p}}, comp scrollPane1:::p:133:p, space :p:186:p}}"
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 975, 675 )
+			"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "学生学号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "老师编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField4"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "班级编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "课程编号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField5"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "期末成绩"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField6"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "最终成绩"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField7"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "插入"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "学号" )
+						add( "老师编号" )
+						add( "班级编号" )
+						add( "课程编号" )
+						add( "课程名称" )
+						add( "平时成绩" )
+						add( "期末成绩" )
+						add( "最终成绩" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+					auxiliary() {
+						"model.forceValue": true
+					}
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "课程名称"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "平时成绩"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField8"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 20, 85 )
+			"size": new java.awt.Dimension( 985, 660 )
+		} )
+	}
+}

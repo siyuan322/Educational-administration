@@ -1,0 +1,72 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {par t {seq t {space :::p, comp label1:::p:50:p, space :::p, comp textField1:::p:150:p}, seq l {space :p:219:p, comp button1:::p::p}}, seq l {space :p:50:p, comp scrollPane1:::p:580:p}}, space ::265:x}}"
+			"$verticalGroup": "par l {seq l {space :p:57:p, par b {comp textField1::b:p::p, comp label1::b:p:24:p}, space :p:26:p, comp button1:::p::p, space ::52:x, comp scrollPane1:::p:369:p, space :p:106:p}}"
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 975, 675 )
+			"minimumSize": new java.awt.Dimension( 515, 660 )
+			"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "学号"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查询"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "学生学号" )
+						add( "教师编号" )
+						add( "班级编号" )
+						add( "课程编号" )
+						add( "课程名称" )
+						add( "最终成绩" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+					"font": new java.awt.Font( "Microsoft YaHei UI", 0, 14 )
+					auxiliary() {
+						"model.forceValue": true
+					}
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 895, 660 )
+		} )
+	}
+}

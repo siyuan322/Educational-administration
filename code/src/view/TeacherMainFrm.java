@@ -11,6 +11,10 @@ import view.book.ShowABook;
 import view.course.AddCourseByTeacher;
 import view.course.CourseListByTeacher;
 import view.course.StudentList;
+import view.grade.Insert_gradePannel;
+import view.grade.searchGradeByte;
+import view.grade.sortGrade;
+import view.grade.statisticGrade;
 
 import javax.swing.*;
 import java.awt.*;
@@ -50,6 +54,15 @@ public class TeacherMainFrm extends JFrame {
         JPanel showABook = new ShowABook();
         panel1.add(showABook, "showABook");
 
+        Insert_gradePannel insert_gradePannel = new Insert_gradePannel();
+        searchGradeByte searchGradeByte0 = new searchGradeByte();
+        statisticGrade statisticGrade0 = new statisticGrade();
+        sortGrade sortGrade = new sortGrade();
+
+        panel1.add(insert_gradePannel, "insertGrade");
+        panel1.add(searchGradeByte0, "searchGradeByte");
+        panel1.add(statisticGrade0, "statisticGrade");
+        panel1.add(sortGrade, "sortGrade");
 
         JPanel testPanel = new TestPanel();
         panel1.add(testPanel, "test");
@@ -98,6 +111,32 @@ public class TeacherMainFrm extends JFrame {
         cardLayout.show(panel1, "showABook");
     }
 
+    // 录入成绩
+    private void menuItem8ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "insertGrade");
+
+    }
+
+    // 查询成绩
+    private void menuItem9ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "searchGradeByte");
+    }
+
+    // 平均成绩
+    private void menuItem10ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "statisticGrade");
+    }
+
+    // 成绩排名
+    private void menuItem11ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "sortGrade");
+    }
+
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
@@ -109,6 +148,11 @@ public class TeacherMainFrm extends JFrame {
         menu3 = new JMenu();
         menuItem6 = new JMenuItem();
         menuItem7 = new JMenuItem();
+        menu4 = new JMenu();
+        menuItem8 = new JMenuItem();
+        menuItem9 = new JMenuItem();
+        menuItem10 = new JMenuItem();
+        menuItem11 = new JMenuItem();
         menu2 = new JMenu();
         menuItem4 = new JMenuItem();
         panel1 = new JPanel();
@@ -170,6 +214,37 @@ public class TeacherMainFrm extends JFrame {
             }
             menuBar1.add(menu3);
 
+            //======== menu4 ========
+            {
+                menu4.setText("\u6210\u7ee9\u7ba1\u7406");
+                menu4.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+
+                //---- menuItem8 ----
+                menuItem8.setText("\u5f55\u5165\u6210\u7ee9");
+                menuItem8.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem8.addActionListener(e -> menuItem8ActionPerformed(e));
+                menu4.add(menuItem8);
+
+                //---- menuItem9 ----
+                menuItem9.setText("\u67e5\u8be2\u6210\u7ee9");
+                menuItem9.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem9.addActionListener(e -> menuItem9ActionPerformed(e));
+                menu4.add(menuItem9);
+
+                //---- menuItem10 ----
+                menuItem10.setText("\u5e73\u5747\u6210\u7ee9");
+                menuItem10.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem10.addActionListener(e -> menuItem10ActionPerformed(e));
+                menu4.add(menuItem10);
+
+                //---- menuItem11 ----
+                menuItem11.setText("\u6210\u7ee9\u6392\u540d");
+                menuItem11.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem11.addActionListener(e -> menuItem11ActionPerformed(e));
+                menu4.add(menuItem11);
+            }
+            menuBar1.add(menu4);
+
             //======== menu2 ========
             {
                 menu2.setText("\u7cfb\u7edf\u7ba1\u7406");
@@ -218,6 +293,11 @@ public class TeacherMainFrm extends JFrame {
     private JMenu menu3;
     private JMenuItem menuItem6;
     private JMenuItem menuItem7;
+    private JMenu menu4;
+    private JMenuItem menuItem8;
+    private JMenuItem menuItem9;
+    private JMenuItem menuItem10;
+    private JMenuItem menuItem11;
     private JMenu menu2;
     private JMenuItem menuItem4;
     private JPanel panel1;
