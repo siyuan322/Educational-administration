@@ -6,6 +6,9 @@ package view;
 
 import model.Student;
 import model.UserType;
+import view.book.AllBooks;
+import view.book.ShowABook;
+import view.course.ChooseCourse;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,30 +21,59 @@ public class StudentMainFrame extends JFrame {
     public StudentMainFrame(UserType userType, Object user) {
         this.userType = userType;
         this.user = user;
+        this.cardLayout = new CardLayout();
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         Student student = (Student) user;
+        // 选课
         JPanel chooseCourse = new ChooseCourse(student);
-        JPanel testPanel = new TestPanel();
         panel1.add(chooseCourse, "chooseCourse");
+
+        // 所有教材
+        JPanel allBooks = new AllBooks();
+        panel1.add(allBooks, "allBooks");
+
+        // 具体条目
+        JPanel showABook = new ShowABook();
+        panel1.add(showABook, "showABook");
+
+        // 测试面板
+        JPanel testPanel = new TestPanel();
         panel1.add(testPanel, "test");
     }
 
+    // 选课
     private void chooseStudyActionPerformed(ActionEvent e) {
         // TODO add your code here
         cardLayout.show(panel1, "chooseCourse");
     }
 
+    // 测试面板
     private void menuItem2ActionPerformed(ActionEvent e) {
         // TODO add your code here
         cardLayout.show(panel1, "test");
     }
 
+    // 退出系统
     private void menuItem3ActionPerformed(ActionEvent e) {
         // TODO add your code here
         this.dispose();
         new LoginFrame();
     }
+
+    // 所有教材
+    private void allBooksActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "allBooks");
+    }
+
+    // 具体条目
+    private void oneBookActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "showABook");
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -49,10 +81,12 @@ public class StudentMainFrame extends JFrame {
         menu1 = new JMenu();
         menuItem1 = new JMenuItem();
         menuItem2 = new JMenuItem();
+        menu3 = new JMenu();
+        menuItem4 = new JMenuItem();
+        menuItem5 = new JMenuItem();
         menu2 = new JMenu();
         menuItem3 = new JMenuItem();
         panel1 = new JPanel();
-        cardLayout = new CardLayout();
 
         //======== this ========
         setTitle("\u5b66\u751f");
@@ -79,6 +113,25 @@ public class StudentMainFrame extends JFrame {
                 menu1.add(menuItem2);
             }
             menuBar1.add(menu1);
+
+            //======== menu3 ========
+            {
+                menu3.setText("\u6559\u6750\u7ba1\u7406");
+                menu3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+
+                //---- menuItem4 ----
+                menuItem4.setText("\u6240\u6709\u6559\u6750");
+                menuItem4.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem4.addActionListener(e -> allBooksActionPerformed(e));
+                menu3.add(menuItem4);
+
+                //---- menuItem5 ----
+                menuItem5.setText("\u5177\u4f53\u6761\u76ee");
+                menuItem5.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem5.addActionListener(e -> oneBookActionPerformed(e));
+                menu3.add(menuItem5);
+            }
+            menuBar1.add(menu3);
 
             //======== menu2 ========
             {
@@ -115,13 +168,16 @@ public class StudentMainFrame extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    UserType userType;  // 用户的类型
-    Object user;        // 登录的用户
+    private UserType userType;  // 用户的类型
+    private Object user;        // 登录的用户
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JMenuBar menuBar1;
     private JMenu menu1;
     private JMenuItem menuItem1;
     private JMenuItem menuItem2;
+    private JMenu menu3;
+    private JMenuItem menuItem4;
+    private JMenuItem menuItem5;
     private JMenu menu2;
     private JMenuItem menuItem3;
     private JPanel panel1;

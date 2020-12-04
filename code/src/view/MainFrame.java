@@ -6,6 +6,13 @@ package view;
 
 import model.AcdemicDean;
 import model.UserType;
+import view.book.AddBook;
+import view.book.AllBooks;
+import view.book.ModifyBook;
+import view.book.ShowABook;
+import view.course.AddCourseByAD;
+import view.course.AuditByAD;
+import view.course.CourseListByAD;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,14 +29,38 @@ public class MainFrame extends JFrame {
         cardLayout = new CardLayout();
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
         AcdemicDean dean = (AcdemicDean) user;
+        // 添加课程
         JPanel addCourseByADPanel = new AddCourseByAD(dean);
-        JPanel courseListByADPanel = new CourseListByAD(dean);
-        JPanel auditByAD = new AuditByAD(dean);
-        JPanel testPanel = new TestPanel();
         panel1.add(addCourseByADPanel, "addCourseByAD");
+
+        // 课程列表
+        JPanel courseListByADPanel = new CourseListByAD(dean);
         panel1.add(courseListByADPanel, "courseListByAD");
+
+        // 审核课程
+        JPanel auditByAD = new AuditByAD(dean);
         panel1.add(auditByAD, "auditByAD");
+
+        // 添加教材
+        JPanel addBook = new AddBook(dean);
+        panel1.add(addBook, "addBook");
+
+        // 修改教材
+        JPanel modifyBook = new ModifyBook(dean);
+        panel1.add(modifyBook, "modifyBook");
+
+        // 所有教材
+        JPanel allBooks = new AllBooks();
+        panel1.add(allBooks, "allBooks");
+
+        // 具体条目
+        JPanel showABook = new ShowABook();
+        panel1.add(showABook, "showABook");
+
+        // 测试面板
+        JPanel testPanel = new TestPanel();
         panel1.add(testPanel, "testPanel");
     }
 
@@ -64,6 +95,30 @@ public class MainFrame extends JFrame {
         new LoginFrame();
     }
 
+    // 添加教材
+    private void addBookActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "addBook");
+    }
+
+    // 所有教材
+    private void showAllBooksActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "allBooks");
+    }
+
+    // 具体条目
+    private void showOneBookActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "showABook");
+    }
+
+    // 修改课程
+    private void modifyBookActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        cardLayout.show(panel1, "modifyBook");
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
@@ -72,10 +127,14 @@ public class MainFrame extends JFrame {
         menuItem3 = new JMenuItem();
         menuItem4 = new JMenuItem();
         menuItem2 = new JMenuItem();
+        menu3 = new JMenu();
+        menuItem6 = new JMenuItem();
+        menuItem9 = new JMenuItem();
+        menuItem7 = new JMenuItem();
+        menuItem8 = new JMenuItem();
         menu2 = new JMenu();
         menuItem5 = new JMenuItem();
         panel1 = new JPanel();
-        cardLayout = new CardLayout();
 
         //======== this ========
         setTitle("\u6559\u52a1\u5458");
@@ -114,6 +173,37 @@ public class MainFrame extends JFrame {
                 menu1.add(menuItem2);
             }
             menuBar1.add(menu1);
+
+            //======== menu3 ========
+            {
+                menu3.setText("\u6559\u6750\u7ba1\u7406");
+                menu3.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 16));
+
+                //---- menuItem6 ----
+                menuItem6.setText("\u65b0\u589e\u6559\u6750");
+                menuItem6.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem6.addActionListener(e -> addBookActionPerformed(e));
+                menu3.add(menuItem6);
+
+                //---- menuItem9 ----
+                menuItem9.setText("\u4fee\u6539\u6559\u6750");
+                menuItem9.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem9.addActionListener(e -> modifyBookActionPerformed(e));
+                menu3.add(menuItem9);
+
+                //---- menuItem7 ----
+                menuItem7.setText("\u6240\u6709\u6559\u6750");
+                menuItem7.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem7.addActionListener(e -> showAllBooksActionPerformed(e));
+                menu3.add(menuItem7);
+
+                //---- menuItem8 ----
+                menuItem8.setText("\u5177\u4f53\u6761\u76ee");
+                menuItem8.setFont(new Font("Microsoft YaHei UI", Font.PLAIN, 14));
+                menuItem8.addActionListener(e -> showOneBookActionPerformed(e));
+                menu3.add(menuItem8);
+            }
+            menuBar1.add(menu3);
 
             //======== menu2 ========
             {
@@ -160,6 +250,11 @@ public class MainFrame extends JFrame {
     private JMenuItem menuItem3;
     private JMenuItem menuItem4;
     private JMenuItem menuItem2;
+    private JMenu menu3;
+    private JMenuItem menuItem6;
+    private JMenuItem menuItem9;
+    private JMenuItem menuItem7;
+    private JMenuItem menuItem8;
     private JMenu menu2;
     private JMenuItem menuItem5;
     private JPanel panel1;

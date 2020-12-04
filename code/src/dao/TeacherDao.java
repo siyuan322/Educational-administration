@@ -1,6 +1,7 @@
 package dao;
 
 import model.CourseByTeacher;
+import model.Student;
 import model.Teach;
 import model.Teacher;
 import util.DbUtil;
@@ -343,5 +344,34 @@ public class TeacherDao {
             DbUtil.closeConn(conn);
         }
         return flag;
+    }
+
+
+    // 获取课程的所有名单
+    public List<Student> showStudents(int cid, String tid, String studyTime) {
+        Connection conn = DbUtil.getConn();
+        String sql = "select student.sid, sname from curriculum, student where cid=? and tid=? and studyTime=? and curriculum.sid=student.sid";
+        List<Student> studentList = new ArrayList<Student>();
+        // 传sql语句
+        try {
+            PreparedStatement pres = conn.prepareStatement(sql);
+            pres.setInt(1, cid);
+            pres.setString(2, tid);
+            pres.setString(3, studyTime);
+            // 执行sql语句
+            ResultSet rs = pres.executeQuery();
+            while (rs.next()) {
+                Student student = new Student();
+                student.setSid(rs.getString(1));
+                student.setSname(rs.getString(2));
+                studentList.add(student);
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            DbUtil.closeConn(conn);
+        }
+        return studentList;
     }
 }

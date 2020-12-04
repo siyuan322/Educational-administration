@@ -1,0 +1,95 @@
+JFDML JFormDesigner: "7.0.2.6.321" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:87:p, par l:::p {seq {comp label2:::p:110:p, space :::p, comp instituteComboBox:::p:189:p}, comp bookImg:::::x}, space :p:25:p, par l {comp label1::l:p::p, comp label5:::p:86:p, par t:l::p {comp label4::l::118:x, comp label3::l::118:x, comp label6::l::118:x, comp label7::l::118:x}}, space :p:12:p, par l:::p {seq {comp cnameComboBox:::p:225:p, space :p:41:p, comp button1:::p::p}, comp bookIdTextField::l:::x, comp bookNameTextField::l:::x, comp bookAuthorTextField::l:::x, comp publishingTextField::l:::x}, space ::78:x}}"
+			"$verticalGroup": "par l {seq l {par t {seq {space :p:250:p, comp bookImg:::p:354:p}, seq l {space :p:44:p, comp label1:::p::p, space :p:46:p, par b {comp label2::b:p:32:p, comp instituteComboBox::b:p:32:p, comp cnameComboBox::b:p::p, comp button1::b:p::p, comp label7::b:p:33:p}, space :p:93:p, par b {comp bookIdTextField::b:p:31:p, comp label6::b:p:31:p}, space :p:56:p, par b {comp bookNameTextField::b:p:31:p, comp label3::b:p:31:p}, space :p:82:p, par b {comp bookAuthorTextField::b:p:33:p, comp label4::b:p:33:p}, space :p:90:p, par b {comp label5::b:p:31:p, comp publishingTextField::b:p:31:p}}}, space ::71:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "具 体 条 目"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 26 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "开 课 学 院 ："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cnameComboBox"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "书     名："
+				"font": &Font0 new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "bookNameTextField"
+				"font": &Font1 new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "作      者："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "bookAuthorTextField"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "出 版 社："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "publishingTextField"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "instituteComboBox"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "请选择"
+					addElement( "请选择" )
+					addElement( "计算机科学与工程学院" )
+					addElement( "数学学院" )
+				}
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "instituteComboBoxItemStateChanged", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "课 程 名："
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查  询"
+				"font": new java.awt.Font( "Microsoft YaHei UI", 0, 16 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "showBookItemActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "bookImg"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "教材编号："
+				"font": #Font0
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "bookIdTextField"
+				"font": #Font1
+				"editable": false
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 975, 675 )
+		} )
+	}
+}
